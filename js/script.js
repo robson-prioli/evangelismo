@@ -36,8 +36,4 @@ const catchVerse = async() => {
     boxVerse.innerHTML = `error`;
 }
 
-const setRandomImage = async() => {
-    document.querySelector('.box-background').src = `img/${backgrounds[Math.floor(Math.random() * backgrounds.length)]}`;
-}
-
-window.addEventListener('load', async () => await Promise.all([await setRandomImage(), await loadVerses()]));
+window.addEventListener('load', async () => await Promise.all([await loadVerses()]));

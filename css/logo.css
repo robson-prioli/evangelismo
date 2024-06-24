@@ -1,0 +1,167 @@
+:root{
+    --color-1: #ffffff;
+    --color-2: #ffffff;
+}
+
+/* loader style */
+.loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .loading{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .loading-title{
+        font-size: 2.8em;
+        color: transparent;
+        clip-path: stroke-box;
+        -webkit-text-stroke: 1px var(--color-2);
+        text-transform: uppercase;
+        position: relative;
+      }
+
+      & .loading-title::after{
+        content: attr(data-text);
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: var(--color-2);
+        position: absolute;
+        -webkit-text-stroke: 0px var(--color-2);
+        border-right: 2px solid var(--color-2);
+        overflow: hidden;
+        animation: animate 6s ease 1s infinite alternate;
+      }
+
+      & .loading-desc{
+        font-size: var(--p);
+        color: var(--color-2); 
+        animation: text-shadow-anim 3s ease 1s infinite alternate;
+      }
+    }
+}
+
+/* logo style */
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1{
+      color: var(--color-1);
+      display: block;
+      font-weight: 400;
+      text-transform: uppercase;
+      -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both;
+	    animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both; 
+    }
+
+    & h4{
+      color: var(--color-1);
+      width: fit-content;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 6px;
+      position: relative;
+      -webkit-animation: tracking-in-expand 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both;
+	    animation: tracking-in-expand 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both;
+    }
+
+    & h4::after{
+        content: '';
+        width: 50px;
+        height: 1px;
+        left: -55px;
+        top: 50%;
+        position: absolute;
+        background: var(--color-2);
+    }
+
+    & h4::before{
+        content: '';
+        width: 50px;
+        height: 1px;
+        right: -55px;
+        top: 50%;
+        position: absolute;
+        background: var(--color-2);
+    }
+}
+
+/* animation`s */
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-webkit-keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+}
+@keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+}
+  
+@-webkit-keyframes animate {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes animate{
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@-webkit-keyframes text-shadow-anim {
+  0% { text-shadow: 0 0 0 var(--color-2); }
+  100% { text-shadow: 0 0 20px var(--color-2); }
+}
+@keyframes text-shadow-anim{
+  0% { text-shadow: 0 0 0 var(--color-2); }
+  100% { text-shadow: 0 0 20px var(--color-2); }
+}
