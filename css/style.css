@@ -141,5 +141,5 @@ body{
   @keyframes text-shadow-anim{
     0% { text-shadow: 0 0 0 var(--color-4); }
     100% { text-shadow: 0 0 20px var(--color-4); }
-  }
+}
   
