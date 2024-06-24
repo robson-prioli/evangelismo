@@ -4,7 +4,7 @@
     --color-3: #e50101;
     --color-4:  #ffffff;
 }
-
+ 
 *{
     padding: 0;
     margin: 0;
@@ -141,5 +141,9 @@ body{
   @keyframes text-shadow-anim{
     0% { text-shadow: 0 0 0 var(--color-4); }
     100% { text-shadow: 0 0 20px var(--color-4); }
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> dd03078e4ddb9f875182489448c2245d7f596e88
   
