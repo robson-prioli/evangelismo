@@ -33,13 +33,13 @@ body{
     }
 
     & .box-verse{
-        width: min(80%, 600px);
+        width: min(90%, 600px);
 
         & .box-text{
             color: var(--color-4);
-            font-size: clamp(1.5em, 3vw, 2.5em);
+            font-size: clamp(1em, 1vw, 2em);
             font-weight: 600;
-            line-height: clamp(40px, 3vw, 50px);
+            line-height: clamp(40px, 1vw, 50px);
             text-transform: math-auto;
             text-align: center;
         }
@@ -49,7 +49,7 @@ body{
             margin: 48px 0 0 0;
             text-transform: math-auto;
             text-align: center;
-            font-size: clamp(1em, 3vw, 1.2em);
+            font-size: clamp(.8em, 1vw, 1em);
             font-weight: 300;
             position: relative;
         }
@@ -57,9 +57,9 @@ body{
         & .box-book::after{
             content: '';
             width: 30%;
-            height: 1px;
+            height: 2px;
             background-color: var(--color-4);
-            bottom: 0;
+            bottom: -5px;
             left: 35%;
             position: absolute;
         }
@@ -67,7 +67,7 @@ body{
 
     & .box-admirer{
         color: var(--color-4);
-        font-size: clamp(1em, 3vw, 1.2em);
+        font-size: clamp(.8em, 1vw, 1em);
 
         & i{
             color: var(--color-3);
@@ -91,7 +91,7 @@ body{
     }
 
     & .box-owner{
-        font-size: clamp(1em, 3vw, 1.2em);
+        font-size: clamp(.8em, 1vw, 1em);
         text-align: center;
         position: absolute;
         bottom: 16px;
