@@ -21,6 +21,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 
     & .box-background{
         width: 100%;
