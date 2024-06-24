@@ -97,7 +97,7 @@ body{
     }
 
     & .box-owner{
-        font-size: clamp(.8em, 1vw, 1em);
+        font-size: clamp(.7em, 1vw, .8em);
         text-align: center;
         padding: 8px 16px;
         border-radius: 8px;
