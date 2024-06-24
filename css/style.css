@@ -19,7 +19,6 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     position: relative;
 
@@ -34,6 +33,7 @@ body{
 
     & .box-verse{
         width: min(90%, 600px);
+        margin-top: 64px;
 
         & .box-text{
             color: var(--color-4);
@@ -66,6 +66,7 @@ body{
     }
 
     & .box-admirer{
+        margin-top: 128px;
         color: var(--color-4);
         font-size: clamp(.8em, 1vw, 1em);
 
