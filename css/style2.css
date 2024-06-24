@@ -22,7 +22,6 @@ body{
 
 .screen{
     width: 100vw;
-    height: 100vh;
     transition: margin 0.5s ease-out;
     background: #141414;
 }
@@ -38,6 +37,8 @@ body{
 }
 
 .screen{
+    min-height: 100vh;
+    max-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
