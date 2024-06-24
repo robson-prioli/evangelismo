@@ -1,8 +1,3 @@
-:root{
-    --color-1: #ffffff;
-    --color-2: #ffffff;
-}
-
 /* loader style */
 .loader{
     display: flex;
@@ -20,7 +15,7 @@
         font-size: 2.8em;
         color: transparent;
         clip-path: stroke-box;
-        -webkit-text-stroke: 1px var(--color-2);
+        -webkit-text-stroke: 1px var(--color-4);
         text-transform: uppercase;
         position: relative;
       }
@@ -31,17 +26,17 @@
         height: 100%;
         top: 0;
         left: 0;
-        color: var(--color-2);
+        color: var(--color-4);
         position: absolute;
-        -webkit-text-stroke: 0px var(--color-2);
-        border-right: 2px solid var(--color-2);
+        -webkit-text-stroke: 0px var(--color-4);
+        border-right: 2px solid var(--color-4);
         overflow: hidden;
         animation: animate 6s ease 1s infinite alternate;
       }
 
       & .loading-desc{
         font-size: var(--p);
-        color: var(--color-2); 
+        color: var(--color-4); 
         animation: text-shadow-anim 3s ease 1s infinite alternate;
       }
     }
@@ -55,7 +50,7 @@
     align-items: center;
 
     & h1{
-      color: var(--color-1);
+      color: var(--color-4);
       display: block;
       font-weight: 400;
       text-transform: uppercase;
@@ -64,7 +59,7 @@
     }
 
     & h4{
-      color: var(--color-1);
+      color: var(--color-4);
       width: fit-content;
       text-transform: uppercase;
       text-align: center;
@@ -81,7 +76,7 @@
         left: -55px;
         top: 50%;
         position: absolute;
-        background: var(--color-2);
+        background: var(--color-4);
     }
 
     & h4::before{
@@ -91,7 +86,7 @@
         right: -55px;
         top: 50%;
         position: absolute;
-        background: var(--color-2);
+        background: var(--color-4);
     }
 }
 
