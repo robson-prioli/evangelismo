@@ -40,26 +40,4 @@ const setRandomImage = async() => {
     document.querySelector('.box-background').src = `img/${backgrounds[Math.floor(Math.random() * backgrounds.length)]}`;
 }
 
-window.addEventListener('load', async () => {
-    await Promise.all([await setRandomImage(), await loadVerses()]);
-    
-     setInterval(
-        () => {
-            document.querySelectorAll('div').forEach((div) => {
-                
-                if(div.classList.length === 0){
-                    div.remove();
-                }
-            });
-        },
-        1000
-    );
-    
-});
-
-document.querySelectorAll('div').forEach((div) => {
-                
-    if(div.classList.length === 0){
-        div.remove();
-    }
-});
+window.addEventListener('load', async () => await Promise.all([await setRandomImage(), await loadVerses()]));
