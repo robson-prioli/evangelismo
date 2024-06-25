@@ -89,10 +89,6 @@
         "texto": "Então Pedro aproximou-se de Jesus e perguntou: \"Senhor, quantas vezes deverei perdoar a meu irmão quando ele pecar contra mim? Até sete vezes?\" Jesus respondeu: \"Eu digo a você: Não até sete, mas até setenta vezes sete.\""
       },
       {
-        "livro": "Isaías 41:10",
-        "texto": "Não temas, porque eu sou contigo; não te assombres, porque eu sou teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça."
-      },
-      {
         "livro": "Mateus 11:28-30",
         "texto": "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei. Tomai sobre vós o meu jugo, e aprendei de mim, porque sou manso e humilde de coração; e encontrareis descanso para as vossas almas. Porque o meu jugo é suave e o meu fardo é leve."
       },
@@ -100,5 +96,6 @@
         "livro": "Romanos 8:38-39",
         "texto": "Porque estou certo de que, nem a morte, nem a vida, nem os anjos, nem os principados, nem as potestades, nem o presente, nem o porvir, nem a altura, nem a profundidade, nem alguma outra criatura nos poderá separar do amor de Deus, que está em Cristo Jesus nosso Senhor."
       }
-    ]
+    ],
+    "data": ["25/06 16:45"]
 }
