@@ -1,6 +1,7 @@
 
 body{
     width: 100vw;
+    
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -8,6 +9,7 @@ body{
 
 .screen{
     width: 100vw;
+    height: 100vh;
     transition: margin 0.5s ease-out;
     background: #141414;
 }
@@ -23,8 +25,6 @@ body{
 }
 
 .screen{
-    min-height: 100vh;
-    max-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -59,29 +59,27 @@ body{
         align-items: center;
         border: 0.5px solid var(--color-4);
         border-radius: 16px;
-        padding: 16px;
+        padding: 16px 16px 0 16px;
 
         & .box-text{
             color: var(--color-4);
             font-size: clamp(1em, 1vw, 2em);
-            font-weight: 600;
-            line-height: clamp(40px, 1vw, 50px);
+            font-weight: 300;
+            line-height: clamp(30px, 1vw, 40px);
             text-transform: math-auto;
             text-align: center;
         }
 
         & .box-book{
-            width: min(200px, 60%);
-            display: inline-block;
-            padding: 8px 0;
-            margin: 48px 0 0 0;
-            text-transform: math-auto;
+            width: 100%;
+            padding: 16px 0;
+            margin: 32px 0 0 0;
             text-align: center;
             font-size: clamp(.8em, 1vw, 1em);
-            font-weight: 300;
-            position: relative;
+            font-weight: 600;
             color: var(--color-4);
             border-top: 0.5px solid var(--color-4);
+            letter-spacing: 2px;
         }
     }
 
@@ -135,5 +133,18 @@ body{
         background: var(--color-3);
         animation: pulse 1.2s ease infinite;
         z-index: -1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
     }
 }
