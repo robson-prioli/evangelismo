@@ -1,7 +1,6 @@
 
 body{
     width: 100vw;
-    
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -9,7 +8,7 @@ body{
 
 .screen{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     transition: margin 0.5s ease-out;
     background: #141414;
 }
