@@ -31,7 +31,7 @@ body{
     position: relative;
 
     & .column{
-        width: min(80%, 600px);
+        width: min(90%, 600px);
         display: flex;
         flex-direction: column;
     }
@@ -89,6 +89,7 @@ body{
             & .result-hidden{
                 margin: 16px 0 0 0;
                 display: none;
+                font-weight: 300;
             }
 
             & .result-hidden.hidden{
@@ -100,6 +101,16 @@ body{
             color: var(--color-1);
             background: var(--color-3);
             text-indent: 8px;
+            font-weight: 600;
+            letter-spacing: 2px;
+
+            & .result-hidden{
+                padding: 8px 8px 0 8px;
+                border-top: 0.5px solid var(--color-1);
+                text-indent: 8px;
+                letter-spacing: normal;
+                line-height: 30px;
+            }
         }
 
         & .result-item.error{
