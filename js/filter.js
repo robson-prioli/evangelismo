@@ -48,7 +48,7 @@ const checkVersiculo = async(search) => {
 const init = async() => {
     await getAllVersiculos().then(() => {
         boxDataInfo.innerHTML = `Busque pelos versículos.<br>Total de versículos: <b>${json.versiculos.length}</b>.<br>Última atualização: <b>${json['data']}</b>.`;
-    });
+    }).finally(() => checkVersiculo(''));
 }
 
 // load
