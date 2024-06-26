@@ -2,8 +2,7 @@
 const boxVerse = document.querySelector('.box-verse');
 
 // var`s
-let backgrounds = ['clouds-1838410_1280.jpg', 'landscape-4547734_1280.jpg', 'mountain-5195052_1280.jpg',
-    'nature-4785780_1280.jpg', 'seascape-4730202_1280.jpg', 'sun-5685447_1280.jpg']; 
+let backgrounds = ['clouds-1838410_1280.jpg', 'landscape-4547734_1280.jpg', 'mountain-5195052_1280.jpg', 'nature-4785780_1280.jpg', 'seascape-4730202_1280.jpg', 'sun-5685447_1280.jpg']; 
 
 const getRandomVerses = async() => {
     return await fetch('data.json').then((res) => res.json());
@@ -22,10 +21,7 @@ const loadVerses = async() => {
 
         boxVerse.appendChild(boxTexto);
         boxVerse.appendChild(boxBook);
-
-    }).catch(()=> catchVerse())).catch(()=> catchVerse());
-
-    
+    }).catch(()=> catchVerse())).catch(()=> catchVerse());  
 }
 
 const getRandomVerse = async(verses) => {
