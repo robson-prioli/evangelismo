@@ -129,3 +129,11 @@ body{
 .hidden-display:nth-child(6) { transition-delay: 2.4s !important; }
 .hidden-display:nth-child(7) { transition-delay: 2.6s !important; }
 .hidden-display:nth-child(8) { transition-delay: 3s !important; }
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .grid-itens{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
