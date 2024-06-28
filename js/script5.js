@@ -9,7 +9,7 @@ const screens = document.querySelectorAll('.screen');
 const gridItens = document.querySelectorAll('.grid-item');
 
 //
-let changeColorTitle = false, chooseUser = null, progressWidth = 0;
+let changeColorTitle = false, chooseUser = null, progressWidth = 0, confirmActive = false;
 
 /* btns */
 btns[0].addEventListener('click', () => screens[1].classList.remove('up'));
@@ -34,6 +34,9 @@ document.getElementById('form').addEventListener('submit', async (e) => {
         body: JSON.stringify({name, reason, message, feeling})
     }).then(() => {
         alert('Seu pedido foi salvo!');
+
+        dialog.style.display = 'none';
+        setTimeout(() => background.style.display = 'none', 700);
     });
 });
 
@@ -94,15 +97,19 @@ const loadVerse = async(verse) => {
 const showDialog = async() => {
     background.style.display = 'block';
     setTimeout(() => dialog.style.display = 'block', 700);
+    confirmActive = false;
 }
 
 const showConfirm = async() => {
-    document.querySelector('.confirm').style.display = 'flex';
+    if(!confirmActive){
+        confirmActive = true;
 
-    setTimeout(() => {
-        document.querySelector('.confirm').style.margin = '0 0 0 0';
-        startProgress();
-    }, 300);
+        document.querySelector('.confirm').style.display = 'flex';
+        setTimeout(() => {
+            document.querySelector('.confirm').style.margin = '0 0 0 0';
+            startProgress();
+        }, 300);
+    }
 }
 
 const startProgress = async() => {
@@ -110,7 +117,13 @@ const startProgress = async() => {
     let interval = setInterval(function() {
         if (progressWidth >= 100) {
             clearInterval(interval);
-            setTimeout(() => document.querySelector('.confirm').style.display = 'none', 5000);
+            setTimeout(() => {
+                document.querySelector('.confirm').style.display = 'none';
+
+                if(confirmActive){
+                    confirmActive = false;
+                }
+            }, 5000);
         } else {
             progressWidth++;
             progressBar.style.width = progressWidth + '%';

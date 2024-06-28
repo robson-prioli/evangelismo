@@ -26,11 +26,6 @@ body{
     margin-top: -100vh;
 }
 
-.screen:nth-child(2){
-    margin-top: 64px;
-    align-items: start;
-}
-
 /**/
 .grid{
     width: min(80%, 600px);
@@ -119,11 +114,14 @@ body{
             & input:not([type="submit"]){
                 width: 100%;
                 padding: 8px 0;
+                text-indent: 8px;
             }
 
             & textarea{
                 width: 100%;
                 height: 100px;
+                text-indent: 8px;
+                padding: 8px 0 0 0;
             }
         }
 
@@ -134,8 +132,8 @@ body{
             margin: 32px 0 0 0;
 
             & input{
-                padding: 8px 16px;
-                text-indent: 8px;
+                padding: 8px 0;
+                width: 100px;
             }
         }
     }
