@@ -1,6 +1,7 @@
 //
 const btns = document.querySelectorAll('.btn');
 const btnOpenDialog = document.querySelector('.btn-open-dialog');
+const btnCloseDialog = document.querySelector('.btn-close');
 
 const dialog = document.querySelector('.dialog');
 const background = document.querySelector('.background');
@@ -14,6 +15,10 @@ let changeColorTitle = false, chooseUser = null, progressWidth = 0, confirmActiv
 /* btns */
 btns[0].addEventListener('click', () => screens[1].classList.remove('up'));
 btnOpenDialog.addEventListener('click', () => showDialog());
+btnCloseDialog.addEventListener('click', () => {
+    dialog.style.display = 'none';
+    setTimeout(() => background.style.display = 'none', 700);
+});
 
 /* form */
 document.getElementById('form').addEventListener('submit', async (e) => {
@@ -64,12 +69,12 @@ gridItens.forEach((gridItem, i) => gridItem.addEventListener('click', async() =>
 
     }
 
-    if((i == 1 || i == 4)){
+    if(i == 0){
         document.querySelector('.box-text').style.color = '#1f1f1f';
         document.querySelector('.box-text').style.borderColor = '#1f1f1f';
         document.querySelector('.box-book').style.color = '#1f1f1f';
         document.querySelector('.btn i').style.color = '#1f1f1f';
-    }else{
+    } else {
         document.querySelector('.box-text').style.color = 'white';
         document.querySelector('.box-text').style.borderColor = 'white';
         document.querySelector('.box-book').style.color = 'white';
@@ -98,6 +103,7 @@ const showDialog = async() => {
     background.style.display = 'block';
     setTimeout(() => dialog.style.display = 'block', 700);
     confirmActive = false;
+    progressWidth = 0;
 }
 
 const showConfirm = async() => {
@@ -118,6 +124,7 @@ const startProgress = async() => {
         if (progressWidth >= 100) {
             clearInterval(interval);
             setTimeout(() => {
+                progressWidth = 0;
                 document.querySelector('.confirm').style.display = 'none';
 
                 if(confirmActive){
