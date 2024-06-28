@@ -24,31 +24,31 @@
                 <h6 class="write hidden-display">Como vc anda se sentindo?</h6>
             </div>
             <div class="grid-itens">
-                <div class="grid-item hidden-display" data-color="#e7b216">
+                <div class="grid-item hidden-display" data-color="#e7b216" data-name="alegria">
                     <img src="img/pinterest-sbackground/05a5eb128422d3cf77e662c7a6fe76a9-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#9b0401">
+                <div class="grid-item hidden-display" data-color="#9b0401" data-name="raiva">
                     <img src="img/pinterest-sbackground/061dc3c83cb76a5d1ad304457a68046b-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#3f9b2b">
+                <div class="grid-item hidden-display" data-color="#3f9b2b" data-name="nojo">
                     <img src="img/pinterest-sbackground/4fac716bbe7e2f4ec9a22f2c1995b4d2-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#d23d97">
+                <div class="grid-item hidden-display" data-color="#d23d97" data-name="vergonha">
                     <img src="img/pinterest-sbackground/5c22957129e7d752b22f9e0be013d196-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#059589">
+                <div class="grid-item hidden-display" data-color="#059589" data-name="inveja">
                     <img src="img/pinterest-sbackground/bb4bb70d7de9d6a9621c96c7ec1263e1-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#2a56a1">
+                <div class="grid-item hidden-display" data-color="#2a56a1" data-name="tristeza">
                     <img src="img/pinterest-sbackground/dcef29694e08b3a8aa38217f2300481e-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#d4660e">
+                <div class="grid-item hidden-display" data-color="#d4660e" data-name="ansiedade">
                     <img src="img/pinterest-sbackground/edc84f171f825909d975a495bacc0eee-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#524bb8">
+                <div class="grid-item hidden-display" data-color="#524bb8" data-name="tédio">
                     <img src="img/pinterest-sbackground/f1b0d4ea87725a947904b1ef803735e3-removebg-preview.png" />
                 </div>
-                <div class="grid-item hidden-display" data-color="#673093">
+                <div class="grid-item hidden-display" data-color="#673093" data-name="medo">
                     <img src="img/pinterest-sbackground/f870eb359448aa78862285188984d484-removebg-preview.png" />
                 </div>
             </div>
@@ -69,27 +69,29 @@
                 <h3>Pedido de oração</h3>
             </div>
             <div class="dialog-content">
-                <div class="row">
-                    <label for="name">Nome</label>
-                    <input type="text" name="name" id="name" placeholder="Seu nome" required/>
-                </div>
-                <div class="row">
-                    <label for="reason">Movito</label>
-                    <input type="text" name="reason" id="reason" placeholder="Movito da oração: família, doença, tristeza." required/>
-                </div>
-                <div class="row">
-                    <label for="message">Mensagem</label>
-                    <textarea name="message" id="message" placeholder="Caso queira compartilhar mais sobre." required></textarea>
-                </div>
-                <div class="row">
-                    <input type="submit" value="Enviar" />
-                </div>
+                <form id="form" action="" method="post">
+                    <div class="row">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" placeholder="Seu nome" required/>
+                    </div>
+                    <div class="row">
+                        <label for="reason">Movito</label>
+                        <input type="text" name="reason" id="reason" placeholder="Movito da oração: família, doença, tristeza." required/>
+                    </div>
+                    <div class="row">
+                        <label for="message">Mensagem</label>
+                        <textarea name="message" id="message" placeholder="Caso queira compartilhar mais sobre." required></textarea>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Enviar" />
+                    </div>
+                </form>
             </div>
         </div>
         <div class="confirm">
             <div class="confirm-qst">Gostaria de deixar um pedido de oração?</div>
             <div class="confirm-aw">
-                <button>Sim</button>
+                <button class="btn-open-dialog">Sim</button>
                 <button>Não</button>
             </div>
             <div class="confirm-timer">
