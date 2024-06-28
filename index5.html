@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style 4</title>
-    <!-- Meta tags to prevent caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <title>Divina mente</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -63,6 +62,39 @@
         <div class="box">
             <div class="box-text"></div>
             <div class="box-book"></div>
+        </div>
+        <div class="background"></div>
+        <div class="dialog">
+            <div class="dialog-title">
+                <h3>Pedido de oração</h3>
+            </div>
+            <div class="dialog-content">
+                <div class="row">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" placeholder="Seu nome" required/>
+                </div>
+                <div class="row">
+                    <label for="reason">Movito</label>
+                    <input type="text" name="reason" id="reason" placeholder="Movito da oração: família, doença, tristeza." required/>
+                </div>
+                <div class="row">
+                    <label for="message">Mensagem</label>
+                    <textarea name="message" id="message" placeholder="Caso queira compartilhar mais sobre." required></textarea>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Enviar" />
+                </div>
+            </div>
+        </div>
+        <div class="confirm">
+            <div class="confirm-qst">Gostaria de deixar um pedido de oração?</div>
+            <div class="confirm-aw">
+                <button>Sim</button>
+                <button>Não</button>
+            </div>
+            <div class="confirm-timer">
+                <span></span>
+            </div>
         </div>
     </section>
 

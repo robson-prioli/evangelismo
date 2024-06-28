@@ -1,28 +1,32 @@
 //
-const btn = document.querySelector('.btn');
+const btns = document.querySelectorAll('.btn');
+
+const dialog = document.querySelector('.dialog');
+const background = document.querySelector('.background');
+
 const screens = document.querySelectorAll('.screen');
-const dialogItens = document.querySelectorAll('.grid-item');
+const gridItens = document.querySelectorAll('.grid-item');
 
 //
-let changeColorTitle = false, chooseUser = null;
+let changeColorTitle = false, chooseUser = null, progressWidth = 0;
 
 //
-btn.addEventListener('click', () => screens[1].classList.remove('up'));
+btns[0].addEventListener('click', () => screens[1].classList.remove('up'));
 
 //
-dialogItens.forEach((dialogItem, i) => dialogItem.addEventListener('click', async() => {
-    dialogItens.forEach((div) => {
+gridItens.forEach((gridItem, i) => gridItem.addEventListener('click', async() => {
+    gridItens.forEach((div) => {
         if(div.classList.contains('active')){
             div.classList.remove('active')
         }
     });
 
-    dialogItem.classList.add('active');
+    gridItem.classList.add('active');
 
-    let backgroundColor = dialogItem.getAttribute('data-color');
+    let backgroundColor = gridItem.getAttribute('data-color');
     screens[0].style.background = `${backgroundColor}`;
     screens[1].style.background = `${backgroundColor}`;
-    screens[2].style.background = `${dialogItem.getAttribute('data-color')}`;
+    screens[2].style.background = `${gridItem.getAttribute('data-color')}`;
     await getRandomVerse();
     
 
@@ -56,7 +60,31 @@ const loadVerse = async(verse) => {
     document.querySelector('.box-text').innerText = `${verse.texto}`;
     document.querySelector('.box-book').innerText = `${verse.livro}`;
 
-    setTimeout(() => screens[1].classList.add('up'), 1000);
+    setTimeout(() => { 
+        screens[1].classList.add('up');
+        setTimeout(() => showConfirm(), 2000);
+    }, 1000);
+}
+
+const showConfirm = async() => {
+    document.querySelector('.confirm').style.display = 'flex';
+
+    setTimeout(() => {
+        document.querySelector('.confirm').style.margin = '0 0 0 0';
+        startProgress();
+    }, 300);
+}
+
+const startProgress = async() => {
+    var progressBar = document.querySelector(".confirm-timer");
+    let interval = setInterval(function() {
+        if (progressWidth >= 100) {
+            clearInterval(interval);
+        } else {
+            progressWidth++;
+            progressBar.style.width = progressWidth + '%';
+        }
+    }, 150); 
 }
 
 const init = async() => {
@@ -70,4 +98,4 @@ const init = async() => {
 }
 
 /* loader */
-window.addEventListener('load', () => init())
+window.addEventListener('load', () => init());

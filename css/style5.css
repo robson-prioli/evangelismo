@@ -14,6 +14,7 @@ body{
     width: 100vw;
     max-width: 100%;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,6 +63,7 @@ body{
 
         & .grid-item{
             width: 100%;
+            max-height: 164px;
             border-radius: 8px;
             overflow: hidden;
             transition: margin cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s;
@@ -71,7 +73,6 @@ body{
             & img{
                 width: 100%;
                 height: 100%;
-                max-height: 164px;
                 object-fit: cover;
             }
         }
@@ -81,6 +82,70 @@ body{
             box-shadow: 0px 8px 0px 0px #1f1f1f;
         }
     }
+}
+
+/**/
+.dialog{
+    width: min(80%, 600px);
+    padding: 16px;
+    position: absolute;
+    background: white;
+    z-index: 9999;
+    display: none;
+
+    & .dialog-title{
+        margin: 0 0 32px 0;
+    }
+
+    & .dialog-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & .row{
+            display: block;
+            margin: 8px 0 0 0;
+
+            & label{
+                display: block;
+                margin: 0 0 4px 0;
+            }
+
+            & input:not([type="submit"]){
+                width: 100%;
+                padding: 8px 0;
+            }
+
+            & textarea{
+                width: 100%;
+                height: 100px;
+            }
+        }
+
+        & .row:last-child{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin: 32px 0 0 0;
+
+            & input{
+                padding: 8px 16px;
+            }
+        }
+    }
+}
+
+
+/**/
+.background{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #1f1f1f;
+    z-index: 999;
+    position: absolute;
+    display: none;
 }
 
 /**/
@@ -109,12 +174,49 @@ body{
 
 /**/
 .btn{
-    top: 15px;
-    right: 15px;
     position: absolute;
     font-size: 1.6em;
     cursor: pointer;
     color: #1f1f1f;
+    top: 15px;
+    right: 15px;
+}
+
+/**/
+.confirm{
+    width: min(80%, 600px);
+    margin: 0 0 -160px 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    transition: margin cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s;
+
+    & .confirm-qst{
+        font-size: 1em;
+        text-align: center;
+        margin: 16px 0 0 0;
+    }
+    
+    & .confirm-aw{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 16px 0;
+
+        & button{
+            margin: 0 16px 0 0;
+        }
+    }
+
+    & .confirm-timer{
+        width: 0;
+        height: 4px;
+        background: #1f1f1f;
+        transition: width linear 0.5s;
+    }
+
 }
 
 /**/
@@ -131,7 +233,6 @@ body{
 .hidden-display:nth-child(6) { transition-delay: 2.4s !important; }
 .hidden-display:nth-child(7) { transition-delay: 2.6s !important; }
 .hidden-display:nth-child(8) { transition-delay: 3s !important; }
-
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
