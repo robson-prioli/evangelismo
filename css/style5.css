@@ -26,6 +26,11 @@ body{
     margin-top: -100vh;
 }
 
+.screen:nth-child(2){
+    margin-top: 64px;
+    align-items: start;
+}
+
 /**/
 .grid{
     width: min(80%, 600px);
