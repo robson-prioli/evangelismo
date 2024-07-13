@@ -36,7 +36,8 @@ const analytics = async(btnClick = false) => {
     try {
         let data = new FormData();
         data.append('btnClick', btnClick);
-        data.append('action', ((btnClick) ? 'btn' : 'view'));
+        data.append('action', ((btnClick) ? 'btn' : 'view')); 
+        data.append('screen', `${window.screen.width}x${window.screen.height}`);
         data.append('callback', 'evangelismo');
 
         await fetch('https://robson-prioli.com/conviva/src/ajax/evangelismo.ajax.php', {method: 'POST', body: data });
