@@ -43,7 +43,6 @@ const checkVersiculo = async(search) => {
         boxResults.appendChild(resultItem);
     }
 }
-    
 
 const init = async() => {
     await getAllVersiculos().then(() => {
