@@ -2,7 +2,7 @@
 const boxVerse = document.querySelector('.box-verse');
 
 // var`s
-let backgrounds = ['clouds-1838410_1280.jpg', 'landscape-4547734_1280.jpg', 'mountain-5195052_1280.jpg', 'nature-4785780_1280.jpg', 'seascape-4730202_1280.jpg', 'sun-5685447_1280.jpg']; 
+let backgrounds = ['clouds-1838410_1280.jpg', 'landscape-4547734_1280.jpg', 'mountain-5195052_1280.jpg', 'nature-4785780_1280.jpg', 'seascape-4730202_1280.jpg', 'sun-5685447_1280.jpg'], __book = ''; 
 
 const getRandomVerses = async() => {
     return await fetch('data.json').then((res) => res.json());
@@ -18,6 +18,8 @@ const loadVerses = async() => {
         const boxBook = document.createElement('div');
         boxBook.classList.add('box-book');
         boxBook.innerHTML = `${verse.livro}`;
+
+        __book = verse.livro;
 
         boxVerse.appendChild(boxTexto);
         boxVerse.appendChild(boxBook);
@@ -38,6 +40,7 @@ const analytics = async(btnClick = false) => {
         data.append('btnClick', btnClick);
         data.append('action', ((btnClick) ? 'btn' : 'view')); 
         data.append('screen', `${window.screen.width}x${window.screen.height}`);
+        data.append('book', `${__book}`);
         data.append('callback', 'evangelismo');
 
         await fetch('https://robson-prioli.com/conviva/src/ajax/evangelismo.ajax.php', {method: 'POST', body: data });
