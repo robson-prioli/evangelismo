@@ -7,7 +7,7 @@ body {
 
 .screen {
     width: 100vw;
-    min-height: 100lvh; /* s, l, d*/
+    min-height: 100dvh; /* s, l, d*/
     transition: margin 0.5s ease-out;
     background: #141414;
 }
