@@ -21,8 +21,13 @@ const loadVerses = async() => {
 
         __book = verse.livro;
 
-        boxVerse.appendChild(boxTexto);
-        boxVerse.appendChild(boxBook);
+        if(boxVerse.dataset.type == 'reverse'){
+            boxVerse.appendChild(boxBook);
+            boxVerse.appendChild(boxTexto);
+        } else {
+            boxVerse.appendChild(boxTexto);
+            boxVerse.appendChild(boxBook);
+        }
     }).catch(()=> catchVerse())).catch(()=> catchVerse());  
 }
 

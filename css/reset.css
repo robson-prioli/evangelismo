@@ -3,6 +3,10 @@
     --color-2: #2f2f2f;
     --color-3: #e50101;
     --color-4:  #ffffff;
+
+    --font-size-small: clamp(10px, 4vw, 12px);
+    --font-size-min: clamp(12px, 4vw, 14px);
+    --font-size-normal: clamp(14px, 4vw, 16px);
 }
  
 *{
@@ -11,3 +15,5 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+
+a{ font-size: var(--font-size-small); }
