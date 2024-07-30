@@ -10,7 +10,7 @@ const screens = document.querySelectorAll('.screen');
 const gridItens = document.querySelectorAll('.grid-item');
 
 //
-let changeColorTitle = false, chooseUser = null, progressWidth = 0, confirmActive = false;
+let changeColorTitle = false, chooseUser = null,  confirmActive = false;
 
 /* btns */
 btns[0].addEventListener('click', () => screens[1].classList.remove('up'));
@@ -18,31 +18,6 @@ btnOpenDialog.addEventListener('click', () => showDialog());
 btnCloseDialog.addEventListener('click', () => {
     dialog.style.display = 'none';
     setTimeout(() => background.style.display = 'none', 700);
-});
-
-/* form */
-document.getElementById('form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let name = document.getElementById('name').value;
-    let reason = document.getElementById('reason').value;
-    let message = document.getElementById('message').value;
-    let feeling = gridItens[chooseUser].getAttribute('data-name');
-
-
-    await fetch('https://api.sheetmonkey.io/form/3ZH8pWCEskMgrsGTf8zXnC', {
-        method: 'post',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name, reason, message, feeling})
-    }).then(() => {
-        alert('Seu pedido foi salvo!');
-
-        dialog.style.display = 'none';
-        setTimeout(() => background.style.display = 'none', 700);
-    });
 });
 
 //
@@ -97,45 +72,6 @@ const loadVerse = async(verse) => {
         screens[1].classList.add('up');
         setTimeout(() => showConfirm(), 2000);
     }, 1000);
-}
-
-const showDialog = async() => {
-    background.style.display = 'block';
-    setTimeout(() => dialog.style.display = 'block', 700);
-    confirmActive = false;
-    progressWidth = 0;
-}
-
-const showConfirm = async() => {
-    if(!confirmActive){
-        confirmActive = true;
-
-        document.querySelector('.confirm').style.display = 'flex';
-        setTimeout(() => {
-            document.querySelector('.confirm').style.margin = '0 0 0 0';
-            startProgress();
-        }, 300);
-    }
-}
-
-const startProgress = async() => {
-    var progressBar = document.querySelector(".confirm-timer");
-    let interval = setInterval(function() {
-        if (progressWidth >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-                progressWidth = 0;
-                document.querySelector('.confirm').style.display = 'none';
-
-                if(confirmActive){
-                    confirmActive = false;
-                }
-            }, 5000);
-        } else {
-            progressWidth++;
-            progressBar.style.width = progressWidth + '%';
-        }
-    }, 150); 
 }
 
 const init = async() => {
