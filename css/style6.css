@@ -177,12 +177,17 @@ body{
     text-align: center;
     font-weight: 300;
     
+    & h3{
+        font-size: .8em;
+    }
+
     & p {
+        font-size: .8em;
         font-family: "Shadows Into Light", cursive;
     }
 
     & h6{
-        font-size: 1em;
+        font-size: .8em;
         text-transform: capitalize;
         font-family: "Allura", cursive;
     }
