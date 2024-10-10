@@ -1,11 +1,14 @@
 
 const analytics = async(btnClick = false) => {
     try {
+
+        let book = __book ?? '';
+
         let data = new FormData();
         data.append('btnClick', btnClick);
         data.append('action', ((btnClick) ? 'btn' : 'view')); 
         data.append('screen', `${window.screen.width}x${window.screen.height}`);
-        data.append('book', `${__book ?? ''}`);
+        data.append('book', `${book}`);
         data.append('church', `${document.body.getAttribute('data-church')}`);
         data.append('callback', 'evangelismo');
 
