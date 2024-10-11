@@ -14,6 +14,18 @@
     <link rel="stylesheet" href="css/reset.css" />
 </head>
 <body data-church="EtecNovaOdessa">
+    <div class="bar-left">
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+        <span>conviver</span>
+    </div>
     
     <section class="screen">
         <div class="logo show">
@@ -22,24 +34,18 @@
         </div>
 
         <div class="carding">
-            <div class="content">
-                <img class="show" src="img/love-699480_1280.jpg" alt="" />
+            <img class="show" src="img/back.png" alt="" />
 
-                <div class="content-header">
-                    <h1 class="show">Estudo</h1>
-                    <h3 class="show">Bíblico</h3>
-                </div>
-
-                <div class="content-text">
+            <div class="card-desc">
+                <h3 class="show">VENHA CONVIVER CONOSCO!</h3>
+                <p class="show">Um momento de: bate papo; dinâmica e estudo da palavra.</p>
+    
+                <div class="content-text show">
                     <h6 class="show"><i class="fa-solid fa-calendar-days"></i> Dia 15/10 das 20h40 as 21hs</h6>
                     <h6 class="show"><i class="fa-solid fa-map-pin"></i> No estacionamento (CAIXA D'ÁGUA)</h6>
                 </div>
-            </div>
-
-            <div class="footer">
-                <h3 class="show">Você esta convidado a esta conosco</h3>
-                <p class="show">Será um momento de bate papo e estudo da palavra.</p>
-                <h6 class="show">Esperamos você!!!</h6>
+    
+                <h4 class="show">Esperamos por você!</h4>
             </div>
         </div>
 
@@ -47,7 +53,12 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.2/typeit.min.js"></script>
-    <script>let __book = '';</script>
+    <script>
+        let __book = '';
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.show').forEach((el, i) => el.style = `animation: show 3s ease ${i * 1}s forwards;`);
+        });
+    </script>
     <script src="js/analytics.js"></script>
 </body>
 </html>
