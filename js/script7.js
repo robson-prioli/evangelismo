@@ -79,7 +79,7 @@ async function changeBack(){
 async function show_animation() {
         // button instagram
         document.querySelectorAll('.igreja')[0].style = 'opacity: 1;transition-delay: 0.5s;';
-        document.querySelectorAll('.verse')[0].style = 'opacity: 1;transition-delay: 1.0s;';
+        document.querySelectorAll('.verse')[0].style = 'opacity: 1;letter-spacing: 4px;transition-delay: 1.0s;';
         document.querySelectorAll('.reference')[0].style = 'opacity: 1;transition-delay: 1.5s;';
 
         // button instagram
@@ -88,7 +88,7 @@ async function show_animation() {
 
 async function hidden_animation() {
     // button instagram
-    document.querySelectorAll('.igreja')[0].style = 'opacity: 0;';
+    document.querySelectorAll('.igreja')[0].style = 'opacity: 0;letter-spacing: 0px;';
     document.querySelectorAll('.verse')[0].style = 'opacity: 0;';
     document.querySelectorAll('.reference')[0].style = 'opacity: 0;';
 
@@ -98,6 +98,7 @@ async function hidden_animation() {
 
 // Carregar os conteúdos ao iniciar
 window.onload = function(){
+    document.body.style = 'opacity: 1';
     loadContent();
     changeBack();
 }
