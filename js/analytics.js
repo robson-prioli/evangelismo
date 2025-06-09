@@ -3,7 +3,7 @@ const analytics = async(btnClick = false) => {
     try {
 
         // TODO: verifica se existe
-        let __book = typeof __book !== 'undefined' ? __book : {};
+        __book = typeof __book !== 'undefined' ? __book : {};
 
         // TODO: monta formData para envio
         let data = new FormData();
