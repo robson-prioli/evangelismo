@@ -1,6 +1,13 @@
 
 const analytics = async(btnClick = false) => {
     try {
+
+        // TODO: verifica se existe
+        if(__book == '' || __book == undefined){
+            let __book = '';
+        }
+
+        // TODO: monta formData para envio
         let data = new FormData();
         data.append('btnClick', btnClick);
         data.append('action', ((btnClick) ? 'btn' : 'view')); 

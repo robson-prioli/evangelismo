@@ -138,20 +138,22 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     text-decoration: none;
     font-family: var(--font-stl-4);
-    font-size: 1em;
+    font-size: .9em;
     transition: bottom 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
 
-  .instagram-box:hover {
-    background-color: #d94639;
-  }
+    &:hover {
+        background-color: #d94639;
+    }
 
-  .instagram-icon {
-    width: 85px;
-    height: 85px;
-    fill: white;
-  }
+    & .instagram-icon {
+        width: 50px;
+        height: 50px;
+        fill: white;
+    }
+}
+
+
