@@ -3,9 +3,7 @@ const analytics = async(btnClick = false) => {
     try {
 
         // TODO: verifica se existe
-        if(__book == '' || __book == undefined){
-            let __book = '';
-        }
+        let __book = typeof __book !== 'undefined' ? __book : {};
 
         // TODO: monta formData para envio
         let data = new FormData();
