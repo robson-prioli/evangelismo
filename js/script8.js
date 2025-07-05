@@ -84,7 +84,7 @@ async function show_animation() {
         document.querySelectorAll('.ticket')[0].style = 'opacity: 1;transition-delay: 2.0s;';
 
         // button instagram
-        setTimeout(() => document.querySelectorAll('.instagram-box')[0].style = 'bottom: 10%;', 1500);
+        setTimeout(() => document.querySelectorAll('.instagram-box')[0].style = 'bottom: 5%;', 1500);
 }
 
 async function hidden_animation() {
@@ -101,5 +101,8 @@ async function hidden_animation() {
 window.onload = function(){
     document.body.style = 'opacity: 1';
     loadContent();
-    changeBack();
+    
+    //changeBack();
+    document.querySelectorAll('.img')[0].style = 'background: transparent;';
+    document.querySelectorAll('.img img')[0].style = 'filter: brightness(0.7);';
 }
