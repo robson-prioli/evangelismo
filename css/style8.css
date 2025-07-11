@@ -117,36 +117,41 @@ body, html {
     position: fixed;
     bottom: -20%;
     left: 50%;
-    padding: 0 8px;
+    padding: 8px 16px;
     transform: translateX(-50%);
-    background-color: #f88d2f;
-    color: white;
+    background-color: #9b2e20;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: start;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     text-decoration: none;
-    font-family: var(--font-stl-4);
-    font-size: .9em;
     transition: bottom 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 9999999999;
 
     &:hover {
-        background-color: #f88d2f;
+        background-color: #9b2e20;
     }
 
-    & .instagram-icon {
-        width: 50px;
-        height: 50px;
-        fill: white;
+    & .fa-instagram{
+        font-size: 2.4em;
+        color: white;
+    }
+
+    & div{
+        margin: 0 0 0 14px;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-stl-4);
+        font-size: .9em;
+        color: white;
     }
 }
 
-
 .ticket {
   display: flex;
-  background-color: #f88d2f;
+  background-color: #9b2e20;
   width: 80%;
   max-width: 360px;
   height: 65px;
@@ -169,14 +174,14 @@ body, html {
   font-size: 18px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  background-color: #f88d2f;
+  background-color: #9b2e20;
   font-family: var(--font-stl-4);
 }
 
 .ticket-center {
   flex: 1;
   margin: 15px 0;
-  background-color: #f88d2f;
+  background-color: #9b2e20;
   border-left: 2px solid rgba(255,255,255,0.3);
   border-right: 2px solid rgba(255,255,255,0.3);
   font-family: var(--font-stl-4);
