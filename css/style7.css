@@ -132,6 +132,7 @@ body, html {
     cursor: pointer;
     text-decoration: none;
     transition: bottom 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 9999999999;
 
     &:hover {
         background-color: #9b2e20;
