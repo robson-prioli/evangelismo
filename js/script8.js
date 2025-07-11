@@ -1,3 +1,4 @@
+/*
 async function getVerse() {
     try {
         const response = await fetch("https://bible-api.com/?random=verse&translation=almeida");
@@ -11,9 +12,45 @@ async function getVerse() {
         return { text: "Erro ao carregar versículo.", reference: "" };
     }
 }
+    */
+
+const getRandomVerses = async() => {
+    return await fetch('data.json').then((res) => res.json());
+}
+
+const loadVerses = async() => {
+    await getRandomVerses()
+    .then((verses) => {
+        try {
+            //
+            let verse = verses.versiculos[Math.floor(Math.random() * verses.versiculos.length)];
+            console.log(verse);
+
+            //
+            hidden_animation();
+
+            //
+            getLandscape();
+
+            let div_verses = document.querySelectorAll('.verse')[0];
+            let div_references = document.querySelectorAll('.reference')[0];
+
+            let formatedText = formatTextWithBreaks(verse.texto, 3);
+            div_verses.innerHTML = `“${formatedText}`; 
+            div_references.innerHTML = `${verse.livro}`;
+
+            //
+            show_animation();
+        } catch (error) {
+            
+        }
+    })
+    .catch(()=> console.log(''));  
+}
+
 
 function getLandscape() {
-    return `https://picsum.photos/1080/1920?random=${Date.now()}`;
+    document.querySelectorAll('.landscape')[0].src = `https://picsum.photos/1080/1920?random=${Date.now()}`;
 }
 
 function formatTextWithBreaks(text, wordsPerLine = 3) {
@@ -32,32 +69,6 @@ function formatTextWithBreaks(text, wordsPerLine = 3) {
     return lines.join(' ');
 }
 
-async function loadContent() {
-    try {
-        //
-        hidden_animation();
-
-        //
-        const verse = await getVerse();
-        const imageUrl = getLandscape();
-        
-        let div_img = document.querySelectorAll('.landscape')[0];
-        let div_verses = document.querySelectorAll('.verse')[0];
-        let div_references = document.querySelectorAll('.reference')[0];
-
-        let formatedText = formatTextWithBreaks(verse.text, 3);
-        div_verses.innerHTML = `“${formatedText}`; // verse.text 
-        div_references.innerHTML = `${verse.reference}`;
-       
-        div_img.src = imageUrl;
-
-        //
-        show_animation();
-    } catch (error) {
-        console.error("Erro ao carregar conteúdo:", error);
-        verseElement.innerText = "Erro ao carregar versículo.";
-    } 
-}
 
 let changebackground = 0;
 async function changeBack(){
@@ -100,7 +111,7 @@ async function hidden_animation() {
 // Carregar os conteúdos ao iniciar
 window.onload = function(){
     document.body.style = 'opacity: 1';
-    loadContent();
+    loadVerses();
     
     //changeBack();
     document.querySelectorAll('.img')[0].style = 'background: transparent;';
